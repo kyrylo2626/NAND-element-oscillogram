@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>ОСЦИЛОГРАФ</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src="view.js"></script>
+<script src="model.js"></script>
+</head>
+<body>
+	<div class="main">
+		<!-- Поле для малювання приладів -->
+		<canvas class="main_window" width="900" height="600" id="main"></canvas>
+		<!-- Інформаційне поле -->
+		<div class="info">
+			<label>Верхня розгортка - сигнал Х1 на вході Вх1; середня - сигнал Х2 на вході Вх2; нижня розгортка - сигнал Y на вході Вх3.<br>Логічна функція Y = <u>x1 ∨ x2</u></label>
+		</div>
+		<!-- Осцилограф -->
+		<div class="oscilloscope">
+			<!-- Екран осцилографа -->
+			<canvas class="oscilloscope_window" width="300" height="240" id="oscilloscope_window"></canvas>
+			<hr style="border: 1px gray solid;background-color: gray; width: 95%;">
+			<div class="generators_window" style="width: 210px; float: right; margin: 28px 15px 0 0">
+				<!-- Кнопки часового режиму осицлографа -->
+				<label style="display: inline-block; margin: 5px 0 5px 0;">Розгортка</label><br>
+				<input class="radiobuttons" type="radio" id="6" name="sec" value="6" checked>
+				<label>6 c</label>
+				<input class="radiobuttons" type="radio" id="3" name="sec" value="3">
+				<label>3 c</label>
+				<input class="radiobuttons" type="radio" id="1.5" name="sec" value="1.5">
+				<label style="margin-right: 4px;">1.5 c</label>
+				<hr style="border: 1px gray solid;background-color: gray; width: 95%; margin-bottom: 2px;">
+				<!-- Кнопки живлення осцилографа -->
+				<div style="margin: 15px 0 0 85px;text-align: start ;">
+					<input class="radiobuttons" type="radio" id="on" name="switch" value="on" onclick="ocs_on()">
+					<label style="font-size: 18pt;">ВКЛ.</label><br>
+					<input class="radiobuttons" type="radio" id="off" name="switch" value="off" onclick="ocs_off()" checked>
+					<label style="font-size: 18pt;">ВИКЛ.</label>
+				</div>
+			</div>
+		</div>
+		<!-- Генератор 1 -->
+		<div class="generators">
+			<!-- Панель генератора -->
+			<div class="generators_window">
+				<label class="text">Частота (Гц):</label>
+				<input type="text" id="frequency2" onfocusout="generator(this.id)" style="border: none; width: 50px; height: 25px; margin-left: 5px;"><br>
+				<hr style="border: 1px gray solid; background-color: gray; width: 95%; margin-bottom: 2.5px;">
+				<!-- Кнопки живлення генератора -->
+				<button class="buttons" id="1button2" value="0" onclick="generator_on('frequency2', this.id)">ВКЛ.</button><br>
+				<button class="buttons" id="2button2" value="1" onclick="generator_off('frequency2', this.id)" style="color: orange;border-color:orange;">ВИКЛ.</button>
+			</div>
+		</div>
+		<!-- Генератор 2 -->
+		<div class="generators" style="bottom: 258px">
+			<!-- Панель генератора -->
+			<div class="generators_window">
+				<label class="text">Частота (Гц):</label>
+				<input type="text" id="frequency1" onfocusout="generator(this.id)" style="border: none; width: 50px; height: 25px; margin-left: 5px;"><br>
+				<hr style="border: 1px gray solid; background-color: gray; width: 95%; margin-bottom: 2.5px;">
+				<!-- Кнопки живлення генератора -->
+				<button class="buttons" id="1button1" value="0" onclick="generator_on('frequency1', this.id)">ВКЛ.</button><br>
+				<button class="buttons" id="2button1" value="1" onclick="generator_off('frequency1', this.id)" style="color: orange;border-color:orange;">ВИКЛ.</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

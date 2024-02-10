@@ -1,0 +1,106 @@
+/*Загальна сторінка*/
+body {
+	font-family: "arial";
+	font-size: 12pt;
+	font-weight: bold;
+}
+/*Робоче поле сторінки*/
+.main {
+	position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+	width: 900;
+	height: 600;
+}
+/*Поле для малювання приладів*/
+.main_window {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+/*Інформаційне поле*/
+.info {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 542px;
+	height: 73px;
+	padding-top: 5px;
+	text-align: center;
+	line-height: 1.4;
+	display:inline-block;
+	background: darkgray;
+	border: 3.5px black solid;
+}
+/*Лінія над текстом*/
+u {
+	text-decoration: overline;
+}
+/*Генератор*/
+.generators {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	height: 246px;
+	margin-top: 5px;
+	text-align: center;
+	display:inline-block;
+}
+/*Панель генератора*/
+.generators_window {
+	width: 220px;
+	height: 150px;
+	margin: 70px 0 0 20px;
+	border: 3.5px black solid;
+	font-size: 15pt;
+}
+/*Кнопки живлення генератора*/
+.buttons {
+	width: 100px;
+	height: 38px;
+	margin-top: 5px;
+	background: black;
+	color: white;
+	padding-top: 3px;
+	font-weight: bold;
+	font-size: 14pt;
+	border: 2px white solid;
+}
+/*Тектові позначки*/
+.text {
+	display: inline-block;
+	margin: 15px 0 0 0;
+}
+/*Осцлограф*/
+.oscilloscope {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 346px;
+	height: 600px;
+	float: right;
+	text-align: center;
+}
+/*Екран осцилорграфа*/
+.oscilloscope_window {
+	background: black;
+	border: 5px green solid;
+	margin-top: 55px;
+}
+/*Кнопки осцилографа*/
+.radiobuttons {
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background: white;
+  margin-right: 5px;
+  position: relative;
+}
+/*Натиснуті кнопки осцилографа*/
+.radiobuttons:checked {
+  border: 3px solid white;
+  background: black;
+}
